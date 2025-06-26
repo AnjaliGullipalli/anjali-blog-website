@@ -17,7 +17,7 @@ function Stories() {
 
   const fetchStories = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/stories');
+      const res = await axios.get('http://13.233.44.109:5000/api/stories');
       setStories(res.data);
     } catch (err) {
       console.error('Error fetching stories:', err);
@@ -30,7 +30,7 @@ function Stories() {
     if (!confirm) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/stories/${id}`);
+      await axios.delete(`http://13.233.44.109:5000/api/stories/${id}`);
       setStories(stories.filter((story) => story._id !== id));
     } catch (error) {
       console.error('Error deleting story:', error);

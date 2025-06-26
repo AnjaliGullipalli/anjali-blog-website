@@ -8,14 +8,14 @@ function FullStory() {
   const [comment, setComment] = useState('');
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/stories/${id}`)
+    axios.get(`http://13.233.44.109:5000/api/stories/${id}`)
       .then((res) => setStory(res.data))
       .catch((err) => console.error('Error fetching story:', err));
   }, [id]);
 
   const handleCommentSubmit = async () => {
     try {
-      const res = await axios.post(`http://localhost:5000/api/stories/${id}/comments`, {
+      const res = await axios.post(`http://13.233.44.109:5000/api/stories/${id}/comments`, {
         text: comment,
       });
       setStory(res.data);
